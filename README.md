@@ -18,8 +18,14 @@ problem with tmsend
 https://github.com/arendst/Tasmota/discussions/15499
 
 workaround 
+
 use tasmota 13.4.0 
-SetOption132 1 in console  
+in console  
+
+```
+SetOption132 1
+```
+
 or define  in user_config_override.h 
 
 ```
