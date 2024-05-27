@@ -77,5 +77,10 @@ Rule1
 on System#Boot do Baudrate 9600 endon on Power1#State=1 do SerialSend5 A00101A2 endon on Power1#State=0 do SerialSend5 A00100A1 endon
 ````
 
+also logging level setup
 
+```
+weblog 4
+weblog 2 <- default 
+```
 
