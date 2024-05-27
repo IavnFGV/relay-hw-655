@@ -46,3 +46,35 @@ webquery from console
 20:50:04.553 CMD: Grp 0, Cmd 'WEBQUERY', Idx 1, Len 113, Pld -99, Data 'https://api.telegram.org/bot[mybottokenhere]/sendMessage?text=test&chat_id=[myprivatechatID]'
 20:50:04.665 RSL: RESULT = {"WebQuery":"Done"}
 ```
+
+brssl 
+
+https://github.com/arendst/Tasmota/discussions/15499
+
+
+example of rule
+
+```
+Rule2
+ON system#boot DO Var1 3 ENDON
+ON system#boot DO Var2 0 ENDON
+ON system#boot DO tmchatid 874778749 ENDON
+ON system#boot DO tmstate 1 ENDON
+ON system#boot DO tmtoken 7003711115:AAEvezz75tx4iSkqk3dG94ztSyz4c24oKbk ENDON
+ON system#boot DO tmsend Router booted up ENDON
+ON Var1#State>1439 DO Var1 1439 ENDON
+ON Time#Minute|%var1% DO Ping4 192.168.0.1 ENDON
+ON Ping#192.168.0.1#Success==0 DO backlog; tmsend Router: Device is unresponsive...; Add2 1 ENDON
+ON Ping#192.168.0.1#Success>0 DO backlog; Var1 3; Var2 0 ENDON
+ON Var2#State > 1 DO backlog Mult1 3; tmsend Router: Device is unresponsive, restarting power; Power1 0; Delay 10; Power1 1; Var2 0 ENDON
+```
+
+vital rule to activate controller on HW-655 board
+
+````
+Rule1
+on System#Boot do Baudrate 9600 endon on Power1#State=1 do SerialSend5 A00101A2 endon on Power1#State=0 do SerialSend5 A00100A1 endon
+````
+
+
+
