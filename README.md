@@ -77,6 +77,12 @@ Rule1
 on System#Boot do Baudrate 9600 endon on Power1#State=1 do SerialSend5 A00101A2 endon on Power1#State=0 do SerialSend5 A00100A1 endon
 ````
 
+something wromg with asus DHCP and esp-01 - workaround- bind address in DHCP and setup via tasmota console
+
+```
+ipaddress1 192.168.0.171
+```
+
 also logging level setup
 
 ```
