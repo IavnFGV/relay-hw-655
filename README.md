@@ -37,6 +37,7 @@ or define  in user_config_override.h
 
 interesting 
 https://github.com/arendst/Tasmota/issues/21464
+https://github.com/arendst/Tasmota/issues/15505
 
 webquery from console
 
