@@ -9,7 +9,8 @@ telegram,ping, rebuild
 
 https://www.juliogonzalez.es/watchdog-for-network-devices-with-tasmota-and-sonoff-s26/508
 
-user_config_override.h content
+user_config_override.h content is in file of current repo
+
 
 how to build locally
 
