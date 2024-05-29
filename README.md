@@ -5,6 +5,10 @@ base instruction
 
 https://www.da-share.com/misc/esp8266-relay-board-mod/
 
+alternative instruction 
+
+https://github.com/sololko/ESP-01-relay-HW-655/blob/master/relayonoff.ino
+
 telegram,ping, rebuild 
 
 https://www.juliogonzalez.es/watchdog-for-network-devices-with-tasmota-and-sonoff-s26/508
