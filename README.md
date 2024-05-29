@@ -5,7 +5,7 @@ base instruction
 
 https://www.da-share.com/misc/esp8266-relay-board-mod/
 
-alternative instruction 
+alternative firmware 
 
 https://github.com/sololko/ESP-01-relay-HW-655/blob/master/relayonoff.ino
 
