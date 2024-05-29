@@ -9,6 +9,8 @@ telegram,ping, rebuild
 
 https://www.juliogonzalez.es/watchdog-for-network-devices-with-tasmota-and-sonoff-s26/508
 
+user_config_override.h content
+
 how to build locally
 
 https://tasmota.github.io/docs/PlatformIO/#download-platformio
