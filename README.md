@@ -102,7 +102,7 @@ cron job on server
 ```
 sudo crontab -u root -e
 ```
-inside of file 
+inside of file  also see energy_alarm folder in current repository
 ```
 * * * * * sudo /opt/energy_alarm/shutdown2.py >> /opt/energy_alarm/logs/out.log
 ```
