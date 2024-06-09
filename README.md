@@ -97,3 +97,16 @@ weblog 4
 weblog 2 <- default 
 ```
 
+cron job on server 
+
+```
+sudo crontab -u root -e
+```
+inside of file 
+```
+* * * * * sudo /opt/energy_alarm/shutdown2.py >> /opt/energy_alarm/logs/out.log
+```
+
+
+
+
