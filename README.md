@@ -107,6 +107,9 @@ inside of file  also see energy_alarm folder in current repository
 * * * * * sudo /opt/energy_alarm/shutdown2.py >> /opt/energy_alarm/logs/out.log
 ```
 
+scheme om communication is 
+![image](https://github.com/IavnFGV/relay-hw-655/assets/11654266/1e16f586-1145-4afc-b218-1c5faa939cbc)
+
 
 
 
