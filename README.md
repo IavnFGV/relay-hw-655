@@ -130,7 +130,13 @@ Communication scheme is
   ```
     rule1 1
   ```
+  ```
+  PulseTime1 1
+  ```
 5. in console of UPS-relay
+   ```
+   pulsetime1 18
+   ```
   ```
   Rule1
   ON system#boot DO backlog; Var1 0; var5 0 ENDON
