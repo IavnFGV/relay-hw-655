@@ -143,8 +143,8 @@ Communication scheme is
   ```
   ```
   Rule2
-  ON Time#Minute|1 DO Ping 192.168.0.152 ENDON
-  on Ping#192.168.0.152#reachable=true DO add5 1 endon
+  ON Time#Minute|1 DO Ping 192.168.0.151 ENDON
+  on Ping#192.168.0.151#reachable=true DO add5 1 endon
   on var5#state==10 do var5 2 endon
   on var5#state==1 do backlog; var1 1; power 1; RuleTimer1 60; add2 1 endon
   on Rules#timer=1 do Ping 192.168.0.171 endon
@@ -161,8 +161,8 @@ Communication scheme is
   ```
   ```
   Rule3
-  ON Time#Minute|1 DO Ping 192.168.0.152 ENDON
-  on Ping#192.168.0.152#reachable=false DO add5 1 endon
+  ON Time#Minute|1 DO Ping 192.168.0.151 ENDON
+  on Ping#192.168.0.151#reachable=false DO add5 1 endon
   on var5#state==10 do var5 2 endon
   on var5#state==1 do backlog; var1 1; RuleTimer1 60; add2 1 endon
   
