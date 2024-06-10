@@ -121,7 +121,8 @@ inside of file  also see energy_alarm folder in current repository
 3. configure both device templates in web_ui to this
    
   ![image](https://github.com/IavnFGV/relay-hw-655/assets/11654266/d8d74963-2587-4fa8-8303-04802278b07a)
-5. in console of PC-relay
+  
+4. in console of PC-relay
   ```
     Rule1
   on System#Boot do Baudrate 9600 endon 
