@@ -107,9 +107,9 @@ inside of file  also see energy_alarm folder in current repository
 * * * * * sudo /opt/energy_alarm/shutdown2.py >> /opt/energy_alarm/logs/out.log
 ```
 
-Communication scheme is 
-![image](https://github.com/IavnFGV/relay-hw-655/assets/11654266/1e16f586-1145-4afc-b218-1c5faa939cbc)
+# Communication scheme is 
 
+![image](https://github.com/IavnFGV/relay-hw-655/assets/11654266/4f8c513f-fb23-4a9f-a627-c31ff66b85e7)
 
 # Steps to init modules
 
@@ -119,8 +119,9 @@ Communication scheme is
   Backlog SetOption132 1; Latitude 50.46493503945635; Longitude 30.410156250000004; TimeDST 0,0,3,1,1,180; TimeSTD 0,0,10,1,1,120; TimeZone 99
   ```
 3. configure both device templates in web_ui to this
+   
   ![image](https://github.com/IavnFGV/relay-hw-655/assets/11654266/d8d74963-2587-4fa8-8303-04802278b07a)
-4. in console of PC-relay
+5. in console of PC-relay
   ```
     Rule1
   on System#Boot do Baudrate 9600 endon 
@@ -188,7 +189,7 @@ Communication scheme is
   on Ping#192.168.0.171#reachable=false DO backlog; var1 3; add2 1  ENDON
   on var1#state=3 do backlog; var5 0; var2 10; var1 0; var4 0; rule3 0; rule2 1 ENDON
   ```
-6. to enble sending telegram notification  please run this
+6. to enable sending telegram notification  please run this
   ```
   tmstate 1
   ```
