@@ -142,7 +142,7 @@ Communication scheme is
   ON system#boot DO backlog; Var1 0; var5 0; var4 0 ENDON
   ON system#boot DO tmchatid 874778749 ENDON
   ON system#boot DO tmstate 1 ENDON
-  ON system#boot DO tmtoken 7003711115:AAE-45tRl-7j8d74g_-inT4wPW2iFGoDt18 ENDON
+  ON system#boot DO tmtoken TOKEN_HERE ENDON
   on System#Boot do Baudrate 9600 endon 
   on Power1#State=1 do SerialSend5 A00101A2 endon 
   on Power1#State=0 do SerialSend5 A00100A1 endon
@@ -186,7 +186,7 @@ Communication scheme is
   on Rules#timer=3 do backlog; Ping 192.168.0.171 endon
   on Ping#192.168.0.171#reachable=true DO backlog; RuleTimer3 60 ENDON
   on Ping#192.168.0.171#reachable=false DO backlog; var1 3; add2 1  ENDON
-  on var1#state=3 do backlog; var5 0; var2 10; var1 0; rule3 0; rule2 1 ENDON
+  on var1#state=3 do backlog; var5 0; var2 10; var1 0; var4 0; rule3 0; rule2 1 ENDON
   ```
 6. to enble sending telegram notification  please run this
   ```
