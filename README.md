@@ -134,9 +134,9 @@ Communication scheme is
   PulseTime1 1
   ```
 5. in console of UPS-relay
-   ```
-   pulsetime1 18
-   ```
+  ```
+  pulsetime1 18
+  ```
   ```
   Rule1
   ON system#boot DO backlog; Var1 0; var5 0 ENDON
@@ -149,7 +149,7 @@ Communication scheme is
   ```
   ```
   Rule2
-  ON Time#Minute|1 DO Ping 192.168.0.151 ENDON
+  ON Time#Minute|5 DO Ping 192.168.0.151 ENDON
   on Ping#192.168.0.151#reachable=true DO add5 1 endon
   on var5#state==10 do var5 2 endon
   on var5#state==1 do backlog; var1 1; power 1; RuleTimer1 60; add2 1 endon
@@ -167,10 +167,14 @@ Communication scheme is
   ```
   ```
   Rule3
-  ON Time#Minute|1 DO Ping 192.168.0.151 ENDON
+  ON Time#Minute|5 DO Ping 192.168.0.151 ENDON
   on Ping#192.168.0.151#reachable=false DO add5 1 endon
   on var5#state==10 do var5 2 endon
-  on var5#state==1 do backlog; var1 1; RuleTimer1 60; add2 1 endon
+  on var5#state==1 do backlog; var1 1; RuleTimer3 60; add2 1 endon
+  on Rules#timer=3 do Ping 192.168.0.2 endon
+  on Ping#192.168.0.2#reachable=false DO var4 1 endon
+  on Ping#192.168.0.2#reachable=true DO backlog; var5 0; add2 1 endon
+  on var4#state==1 do backlog; var1 1; RuleTimer1 60; add2 2 endon
   
   on Rules#timer=1 do Ping 192.168.0.17 endon
   on Ping#192.168.0.17#reachable=true do RuleTimer1 5 endon
@@ -181,9 +185,12 @@ Communication scheme is
   on Ping#192.168.0.171#reachable=false DO backlog; var1 3; add2 1  ENDON
   on var1#state=3 do backlog; var5 0; var2 %var3%; var1 0; rule3 0; rule2 1 ENDON
   
-  on var2#state==11 do tmsend UPS: plug is NOT RESPONSIBLE. There is no Electricity. Monitoring PC. endon
-  on var2#state==12 do tmsend UPS: PC is not responsible. Waiting 60 secs to shutdown UPS. endon
-  on var2#state==13 do tmsend UPS: PC relay is down. Moving to Wait Electricity. endon
+  on var2#state==11 do tmsend UPS: plug is NOT RESPONSIBLE. Lets wait 1 minute and check router. endon
+  on var2#state==12 do backlog; tmsend UPS: router is ok. returning to usial monitoring.; var2 %var3% endon
+  on var2#state==2  do var2 %var3% endon
+  on var2#state==13 do tmsend UPS: router is also Down. Waiting for PC shutdown. endon
+  on var2#state==14 do tmsend UPS: PC is not responsible. Waiting 60 secs to shutdown UPS. endon
+  on var2#state==15 do tmsend UPS: PC relay is down. Moving to Wait Electricity. endon
   ```
 6. to enble sending telegram notification  please run this
   ```
