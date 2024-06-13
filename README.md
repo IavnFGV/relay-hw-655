@@ -180,15 +180,15 @@ inside of file  also see energy_alarm folder in current repository
   on Rules#timer=4 do Ping 192.168.0.2 endon
   on Ping#192.168.0.2#reachable=false DO var4 1 endon
   on Ping#192.168.0.2#reachable=true DO backlog; var5 0; add2 1 endon
-  on var4#state==1 do backlog; var1 1; RuleTimer1 60; add2 2 endon
+  on var4#state==1 do backlog; var1 2; RuleTimer1 60; add2 2 endon
   on Rules#timer=1 do Ping 192.168.0.17 endon
   on Ping#192.168.0.17#reachable=true do RuleTimer1 5 endon
-  on Ping#192.168.0.17#reachable=false DO backlog; RuleTimer2 60; var1 2; add2 1 ENDON
+  on Ping#192.168.0.17#reachable=false DO backlog; RuleTimer2 60; var1 3; add2 1 ENDON
   on Rules#timer=2 do backlog; power 1; RuleTimer3 60 endon
   on Rules#timer=3 do backlog; Ping 192.168.0.171 endon
   on Ping#192.168.0.171#reachable=true DO backlog; RuleTimer3 60 ENDON
-  on Ping#192.168.0.171#reachable=false DO backlog; var1 3; add2 1  ENDON
-  on var1#state=3 do backlog; var5 0; var2 10; var1 0; var4 0; rule3 0; rule2 1 ENDON
+  on Ping#192.168.0.171#reachable=false DO backlog; var1 4; add2 1  ENDON
+  on var1#state=4 do backlog; var5 0; var2 10; var1 0; var4 0; rule3 0; rule2 1 ENDON
   ```
 6. to enable sending telegram notification  please run this
   ```
