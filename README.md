@@ -163,7 +163,7 @@ inside of file  also see energy_alarm folder in current repository
   ON Time#Minute|5 DO Ping 192.168.0.151 ENDON
   on Ping#192.168.0.151#reachable=true DO add5 1 endon
   on var5#state==10 do var5 2 endon
-  on var5#state==1 do backlog; var1 1; power 1; RuleTimer1 60; add2 1 endon
+  on var5#state==1 do backlog; var1 1; power 1; RuleTimer1 120; add2 1 endon
   on Rules#timer=1 do Ping 192.168.0.171 endon
   on Ping#192.168.0.171#reachable=false do RuleTimer1 1 endon
   on Ping#192.168.0.171#reachable=true DO backlog; websend [192.168.0.171]Power ON ; RuleTimer2 60; var1 2; add2 1 ENDON
